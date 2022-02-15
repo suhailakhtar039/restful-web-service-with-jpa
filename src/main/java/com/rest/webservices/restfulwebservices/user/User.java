@@ -22,6 +22,8 @@ public class User {
 	@Size(min = 2,message = "Name should have at least 2 characters")
 	private String name;
 	
+	public User() {}
+	
 	public User(Integer id, String name, Date birthDate) {
 		super();
 		this.id = id;
