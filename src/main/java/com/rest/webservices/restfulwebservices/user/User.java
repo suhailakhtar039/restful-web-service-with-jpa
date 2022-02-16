@@ -10,8 +10,12 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 
 @Entity
+@ApiModel("All details about user")
 public class User {
 	
 	@Id
@@ -19,9 +23,11 @@ public class User {
 	private Integer id;
 	
 	@Past
+	@ApiModelProperty("Birthdate should be in past")
 	private Date birthDate;
 	
 	@Size(min = 2,message = "Name should have at least 2 characters")
+	@ApiModelProperty(notes = "Name should have at least 2 characters")
 	private String name;
 	
 	@OneToMany(mappedBy = "user")
